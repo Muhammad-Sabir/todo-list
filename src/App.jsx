@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import Tasks from './components/Tasks/Tasks';
+import NewTask from './components/NewTask/NewTask';
 
 import './App.css';
 
@@ -9,8 +10,8 @@ function App() {
 
 	return (
 		<>
-			<h1>TODO LIST</h1>
-			<Tasks/>
+			<NewTask />
+			<Tasks />
 		</>
 	);
 }
