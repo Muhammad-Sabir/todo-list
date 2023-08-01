@@ -21,9 +21,15 @@ const INITIAL_TASKS = [
 function App() {
 	const [tasks, setTasks] = useState(INITIAL_TASKS);
 
+	const addTaskHandler = (newTask) => {
+		setTasks((prevState) => {
+			return [newTask, ...prevState];
+		});
+	};
+
 	return (
 		<>
-			<NewTask />
+			<NewTask onAddTask={addTaskHandler} />
 			<Tasks tasks={tasks} />
 		</>
 	);
