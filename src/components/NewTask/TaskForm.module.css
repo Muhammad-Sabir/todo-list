@@ -26,9 +26,18 @@ form {
 	padding: 0rem 0.5rem;
 }
 
+.new-task__controls.invalid label {
+	color: red;
+}
+
+.new-task__controls.invalid input {
+	border-color: red;
+	background-color: rgb(224, 164, 164);
+}
+
 .new-task__controls input:focus {
 	outline: none;
-	border: 1px solid brown;
+	border: 1px solid black;
 	box-shadow: 0px 0px 0.7px rgba(0, 0, 0, 0.017),
 		0px 0px 1.6px rgba(0, 0, 0, 0.024), 0px 0px 2.8px rgba(0, 0, 0, 0.03),
 		0px 0px 4.5px rgba(0, 0, 0, 0.035), 0px 0px 7px rgba(0, 0, 0, 0.04),

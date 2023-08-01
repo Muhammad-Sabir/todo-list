@@ -2,7 +2,7 @@ import React from 'react';
 
 import TaskItem from './TaskItem';
 
-import './Tasks.css';
+import styles from './Tasks.module.css';
 
 const Tasks = ({ tasks, onDeleteTask }) => {
 	const deleteItemHandler = (id) => {
@@ -10,7 +10,7 @@ const Tasks = ({ tasks, onDeleteTask }) => {
 	};
 
 	return (
-		<ul className="tasks">
+		<ul className={styles['tasks']}>
 			{tasks.map((task) => {
 				return (
 					<TaskItem

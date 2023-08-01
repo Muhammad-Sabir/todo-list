@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
 
-import './TaskForm.css';
+import styles from './TaskForm.module.css';
 
 const TaskForm = ({ onSubmitNewTask }) => {
 	const [enteredTask, setEnteredTask] = useState('');
+	const [isValid, setIsValid] = useState(true);
 
 	const taskChangeHandler = (event) => {
+		if (event.target.value.trim().length > 0) setIsValid(true);
+
 		setEnteredTask(event.target.value);
 	};
 
 	const submitHandler = (event) => {
 		event.preventDefault();
+
+		if (enteredTask.trim().length === 0) {
+			setIsValid(false);
+			return;
+		}
 
 		const task = {
 			id: Math.floor(Math.random()) + '',
@@ -23,7 +31,11 @@ const TaskForm = ({ onSubmitNewTask }) => {
 
 	return (
 		<form onSubmit={submitHandler}>
-			<div className="new-task__controls">
+			<div
+				className={`${styles['new-task__controls']} ${
+					!isValid && styles['invalid']
+				}`}
+			>
 				<label>New task: </label>
 				<input
 					type="text"
@@ -32,7 +44,7 @@ const TaskForm = ({ onSubmitNewTask }) => {
 				/>
 			</div>
 
-			<div className="new-task__actions">
+			<div className={styles['new-task__actions']}>
 				<button>Add Task</button>
 			</div>
 		</form>

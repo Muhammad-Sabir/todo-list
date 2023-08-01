@@ -2,7 +2,7 @@ import React from 'react';
 
 import TaskForm from './TaskForm';
 
-import './NewTask.css';
+import styles from './NewTask.module.css';
 
 const NewTask = ({ onAddTask }) => {
 	const onSubmitNewTaskHandler = (enteredTask) => {

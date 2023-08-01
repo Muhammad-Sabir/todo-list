@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-import './TaskItem.css';
+import styles from './TaskItem.module.css';
 
 const TaskItem = ({ task, onDeleteItem }) => {
 	return (
-		<li onClick={() => onDeleteItem(task.id)} className="task-item">
+		<li
+			onClick={() => onDeleteItem(task.id)}
+			className={styles['task-item']}
+		>
 			{task.statement}
 		</li>
 	);
