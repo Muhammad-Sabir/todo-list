@@ -1,4 +1,7 @@
 import { useState } from 'react';
+
+import Tasks from './components/Tasks/Tasks';
+
 import './App.css';
 
 function App() {
@@ -7,6 +10,7 @@ function App() {
 	return (
 		<>
 			<h1>TODO LIST</h1>
+			<Tasks/>
 		</>
 	);
 }
