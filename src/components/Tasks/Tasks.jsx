@@ -4,13 +4,11 @@ import TaskItem from './TaskItem';
 
 import './Tasks.css';
 
-const Tasks = () => {
-	const arr = ['asdasdas', 'asdasdasd', 'asdsadf786y8u', '654sd65fs'];
-
+const Tasks = ({ tasks }) => {
 	return (
 		<ul className="tasks">
-			{arr.map(() => {
-				return <TaskItem />;
+			{tasks.map((task) => {
+				return <TaskItem key={task.id} taskStatement={task.statement} />;
 			})}
 		</ul>
 	);

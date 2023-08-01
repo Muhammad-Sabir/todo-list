@@ -2,8 +2,8 @@ import React from 'react';
 
 import './TaskItem.css';
 
-const TaskItem = () => {
-	return <li className="task-item">Your task no1</li>;
+const TaskItem = ({ taskStatement }) => {
+	return <li className="task-item">{taskStatement}</li>;
 };
 
 export default TaskItem;
