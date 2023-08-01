@@ -27,10 +27,16 @@ function App() {
 		});
 	};
 
+	const deleteTaskHandler = (id) => {
+		setTasks((prevState) => {
+			return prevState.filter((task) => task.id !== id);
+		});
+	};
+
 	return (
 		<>
 			<NewTask onAddTask={addTaskHandler} />
-			<Tasks tasks={tasks} />
+			<Tasks onDeleteTask={deleteTaskHandler} tasks={tasks} />
 		</>
 	);
 }

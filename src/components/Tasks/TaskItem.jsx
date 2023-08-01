@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './TaskItem.css';
 
-const TaskItem = ({ taskStatement }) => {
-	return <li className="task-item">{taskStatement}</li>;
+const TaskItem = ({ task, onDeleteItem }) => {
+	return (
+		<li onClick={() => onDeleteItem(task.id)} className="task-item">
+			{task.statement}
+		</li>
+	);
 };
 
 export default TaskItem;
