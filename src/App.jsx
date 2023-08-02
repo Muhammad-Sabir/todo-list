@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
 import Home from './pages/Home/Home';
+import ErrorModal from './components/UI/ErrorModal';
+import Card from './components/UI/Card';
+import Button from './components/UI/Button';
 
 import './App.css';
 
@@ -28,6 +31,7 @@ function App() {
 
 	return (
 		<>
+			<ErrorModal />
 			<Home tasks={tasks} setTasks={setTasks} />
 		</>
 	);

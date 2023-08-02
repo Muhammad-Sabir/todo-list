@@ -1,14 +1,8 @@
-form {
-	margin-top: 5rem;
+.new-task {
 	padding: 3rem 2rem;
 	width: 30%;
+	margin-top: 5rem;
 	margin-left: 35%;
-	border-radius: 0.5rem;
-	box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.026),
-		0px 0px 3.4px rgba(0, 0, 0, 0.038), 0px 0px 5.9px rgba(0, 0, 0, 0.047),
-		0px 0px 9.4px rgba(0, 0, 0, 0.055), 0px 0px 14.5px rgba(0, 0, 0, 0.063),
-		0px 0px 22.6px rgba(0, 0, 0, 0.072), 0px 0px 37.5px rgba(0, 0, 0, 0.084),
-		0px 0px 75px rgba(0, 0, 0, 0.11);
 }
 
 .new-task__controls {
@@ -48,18 +42,4 @@ form {
 .new-task__actions {
 	font-size: 1.5rem;
 	margin-top: 1rem;
-}
-
-.new-task__actions button {
-	padding: 0.4rem 0.9rem;
-	background-color: brown;
-	color: white;
-	border: 0px;
-	border-radius: 0.15rem;
-	cursor: pointer;
-	box-shadow: 0px 0px 0.7px rgba(0, 0, 0, 0.017),
-		0px 0px 1.6px rgba(0, 0, 0, 0.024), 0px 0px 2.8px rgba(0, 0, 0, 0.03),
-		0px 0px 4.5px rgba(0, 0, 0, 0.035), 0px 0px 7px rgba(0, 0, 0, 0.04),
-		0px 0px 10.9px rgba(0, 0, 0, 0.046), 0px 0px 18px rgba(0, 0, 0, 0.053),
-		0px 0px 36px rgba(0, 0, 0, 0.07);
 }

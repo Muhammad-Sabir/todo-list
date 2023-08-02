@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import Card from '../UI/Card';
+import Button from '../UI/Button';
+
 import styles from './AddTask.module.css';
 
 const AddTask = (props) => {
@@ -12,7 +15,7 @@ const AddTask = (props) => {
 		setEnteredTask(event.target.value);
 	};
 
-	const onSubmitHandler = (event) => {
+	const onAddTaskHandler = (event) => {
 		event.preventDefault();
 
 		if (enteredTask.trim().length === 0) {
@@ -33,7 +36,7 @@ const AddTask = (props) => {
 	};
 
 	return (
-		<form onSubmit={onSubmitHandler}>
+		<Card className={styles['new-task']}>
 			<div
 				className={`${styles['new-task__controls']} ${
 					!isValid && styles['invalid']
@@ -48,9 +51,9 @@ const AddTask = (props) => {
 			</div>
 
 			<div className={styles['new-task__actions']}>
-				<button>Add Task</button>
+				<Button onClick={onAddTaskHandler}>Add Task</Button>
 			</div>
-		</form>
+		</Card>
 	);
 };
 
