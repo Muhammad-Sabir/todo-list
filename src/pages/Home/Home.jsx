@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TasksList from '../../components/TasksList/TasksList';
-import AddTask from '../../components/NewTask/AddTask';
+import AddTask from '../../components/AddTask/AddTask';
 
 const Home = (props) => {
 	return (
