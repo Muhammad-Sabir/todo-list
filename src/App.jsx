@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import Tasks from './components/Tasks/Tasks';
-import NewTask from './components/NewTask/NewTask';
+import Home from './pages/Home/Home';
 
 import './App.css';
 
@@ -21,12 +20,6 @@ const INITIAL_TASKS = [
 function App() {
 	const [tasks, setTasks] = useState(INITIAL_TASKS);
 
-	const addTaskHandler = (newTask) => {
-		setTasks((prevState) => {
-			return [newTask, ...prevState];
-		});
-	};
-
 	const deleteTaskHandler = (id) => {
 		setTasks((prevState) => {
 			return prevState.filter((task) => task.id !== id);
@@ -35,8 +28,7 @@ function App() {
 
 	return (
 		<>
-			<NewTask onAddTask={addTaskHandler} />
-			<Tasks onDeleteTask={deleteTaskHandler} tasks={tasks} />
+			<Home tasks={tasks} setTasks={setTasks} />
 		</>
 	);
 }
