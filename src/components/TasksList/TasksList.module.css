@@ -1,9 +1,10 @@
 .tasks-list {
-    margin-top: 4rem;
 	list-style: none;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
-    max-width: 50%;
-    margin-left: 25%;
+	max-width: 50%;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	margin-left: 25%;
 }
