@@ -31,7 +31,6 @@ function App() {
 
 	return (
 		<>
-			<ErrorModal />
 			<Home tasks={tasks} setTasks={setTasks} />
 		</>
 	);

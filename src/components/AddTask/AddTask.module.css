@@ -20,15 +20,6 @@
 	padding: 0rem 0.5rem;
 }
 
-.new-task__controls.invalid label {
-	color: red;
-}
-
-.new-task__controls.invalid input {
-	border-color: red;
-	background-color: rgb(224, 164, 164);
-}
-
 .new-task__controls input:focus {
 	outline: none;
 	border: 1px solid black;
