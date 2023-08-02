@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import styles from './TaskForm.module.css';
+import styles from './AddTask.module.css';
 
-const TaskForm = ({ onSubmitNewTask }) => {
+const AddTask = (props) => {
 	const [enteredTask, setEnteredTask] = useState('');
 	const [isValid, setIsValid] = useState(true);
 
@@ -12,7 +12,7 @@ const TaskForm = ({ onSubmitNewTask }) => {
 		setEnteredTask(event.target.value);
 	};
 
-	const submitHandler = (event) => {
+	const onSubmitHandler = (event) => {
 		event.preventDefault();
 
 		if (enteredTask.trim().length === 0) {
@@ -24,13 +24,16 @@ const TaskForm = ({ onSubmitNewTask }) => {
 			id: Math.floor(Math.random()) + '',
 			statement: enteredTask,
 		};
-		onSubmitNewTask(task);
+
+		const newTask = [task, ...props.tasks];
+
+		props.setTasks(newTask);
 
 		setEnteredTask('');
 	};
 
 	return (
-		<form onSubmit={submitHandler}>
+		<form onSubmit={onSubmitHandler}>
 			<div
 				className={`${styles['new-task__controls']} ${
 					!isValid && styles['invalid']
@@ -51,4 +54,4 @@ const TaskForm = ({ onSubmitNewTask }) => {
 	);
 };
 
-export default TaskForm;
+export default AddTask;
