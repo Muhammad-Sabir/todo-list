@@ -7,6 +7,7 @@ const Home = (props) => {
 	return (
 		<>
 			<AddTask tasks={props.tasks} setTasks={props.setTasks} />
+
 			<TasksList tasks={props.tasks} setTasks={props.setTasks} />
 		</>
 	);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
 import Card from '../UI/Card';
 import Button from '../UI/Button';
@@ -27,14 +28,15 @@ const AddTask = (props) => {
 		}
 
 		const task = {
-			id: Math.floor(Math.random()) + '',
+			id: uuid(),
 			statement: enteredTask,
 		};
 
 		const newTask = [task, ...props.tasks];
 
-		props.setTasks(newTask);
+		console.log(newTask);
 
+		props.setTasks(newTask);
 		setEnteredTask('');
 	};
 
