@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Home from './pages/Home/Home';
-import ErrorModal from './components/UI/ErrorModal';
-import Card from './components/UI/Card';
-import Button from './components/UI/Button';
 
 import './App.css';
 
@@ -21,21 +18,24 @@ import './App.css';
 // ];
 
 function App() {
+	let ref = useRef(false);
 	const [tasks, setTasks] = useState([]);
 
 	useEffect(() => {
-		setTasks(localStorage.getItem('tasks'));
+		const storedTasks = localStorage.getItem('tasks');
 
-		console.log(typeof tasks);
-
-		return localStorage.setItem('tasks', tasks);
+		if (storedTasks) {
+			setTasks(JSON.parse(storedTasks));
+		}
 	}, []);
 
-	const deleteTaskHandler = (id) => {
-		setTasks((prevState) => {
-			return prevState.filter((task) => task.id !== id);
-		});
-	};
+	useEffect(() => {
+		if (ref.current === false) {
+			ref.current = true;
+		} else {
+			localStorage.setItem('tasks', JSON.stringify(tasks));
+		}
+	}, [tasks]);
 
 	return (
 		<>

@@ -30,6 +30,7 @@ const AddTask = (props) => {
 		const task = {
 			id: uuid(),
 			statement: enteredTask,
+			isDone: false,
 		};
 
 		const newTask = [task, ...props.tasks];
@@ -60,6 +61,9 @@ const AddTask = (props) => {
 						type="text"
 						value={enteredTask}
 						onChange={taskChangeHandler}
+						onKeyDown={(event) => {
+							event.key === 'Enter' && onAddTaskHandler();
+						}}
 					/>
 				</div>
 

@@ -16,27 +16,35 @@ const Task = (props) => {
 	};
 
 	const onCheckboxChangeHandler = () => {
-		if (!isCompleted) {
-			const newTasks = props.tasks.filter(
-				(currTask) => props.task.id !== currTask.id
-			);
+		props.setTasks((prevTasks) =>
+			prevTasks.map((task) =>
+				task.id === props.task.id
+					? { ...task, isDone: !task.isDone }
+					: task
+			)
+		);
 
-			props.setTasks([...newTasks, props.task]);
-		} else {
-			const newTasks = props.tasks.filter(
-				(currTask) => props.task.id !== currTask.id
-			);
+		// if (!isCompleted) {
+		// 	const newTasks = props.tasks.filter(
+		// 		(currTask) => props.task.id !== currTask.id
+		// 	);
 
-			props.setTasks([props.task, ...newTasks]);
-		}
+		// 	props.setTasks([...newTasks, props.task]);
+		// } else {
+		// 	const newTasks = props.tasks.filter(
+		// 		(currTask) => props.task.id !== currTask.id
+		// 	);
 
-		setIsCompleted(!isCompleted);
+		// 	props.setTasks([props.task, ...newTasks]);
+		// }
+
+		// setIsCompleted(!isCompleted);
 	};
 
 	return (
 		<li
 			className={`${styles['task']} ${
-				isCompleted ? styles['checked'] : ''
+				props.task.isDone ? styles['checked'] : ''
 			}`}
 		>
 			<p className={`${styles['task__statement']}`}>
@@ -47,6 +55,7 @@ const Task = (props) => {
 					className={styles['task__controls-checkbox']}
 					type="checkbox"
 					onChange={onCheckboxChangeHandler}
+					checked={props.task.isDone}
 				/>
 				<FontAwesomeIcon
 					className={styles['task__controls-trash']}
