@@ -23,22 +23,6 @@ const Task = (props) => {
 					: task
 			)
 		);
-
-		// if (!isCompleted) {
-		// 	const newTasks = props.tasks.filter(
-		// 		(currTask) => props.task.id !== currTask.id
-		// 	);
-
-		// 	props.setTasks([...newTasks, props.task]);
-		// } else {
-		// 	const newTasks = props.tasks.filter(
-		// 		(currTask) => props.task.id !== currTask.id
-		// 	);
-
-		// 	props.setTasks([props.task, ...newTasks]);
-		// }
-
-		// setIsCompleted(!isCompleted);
 	};
 
 	return (
